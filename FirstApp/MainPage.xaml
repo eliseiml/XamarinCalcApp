@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="FirstApp.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <StackLayout BackgroundColor="black">
+        <Frame Padding="20,50,20,20"
+               BackgroundColor="#212325"
+               CornerRadius="0"
+               HasShadow="False">
+            <Label x:Name="appBarTitle"
+                   FontSize="30"
+                   HorizontalTextAlignment="Center"
+                   Text="Simple Calc"
+                   TextColor="White" />
+        </Frame>
+        <!--  Text field for expressions  -->
+        <Frame BackgroundColor="black"
+               HasShadow="False"
+               HeightRequest="150">
+            <Label x:Name="numbersField"
+                   FontSize="50"
+                   HorizontalOptions="End"
+                   Text=""
+                   TextColor="white"
+                   VerticalOptions="End" />
+        </Frame>
+        <!--  GridView for buttons  -->
+        <Grid Margin="20,0,20,30" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="#999B9C"
+                    Clicked="onClearClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="AC"
+                    TextColor="Black" />
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    BackgroundColor="#999B9C"
+                    Clicked="onOperationButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="+/-"
+                    TextColor="black" />
+            <Button Grid.Row="0"
+                    Grid.Column="2"
+                    BackgroundColor="#999B9C"
+                    Clicked="onOperationButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="%"
+                    TextColor="black" />
+
+            <Button Grid.Row="0"
+                    Grid.Column="3"
+                    BackgroundColor="#FF9329"
+                    Clicked="onOperationButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="/"
+                    TextColor="white" />
+            <Button Grid.Row="1"
+                    Grid.Column="3"
+                    BackgroundColor="#FF9329"
+                    Clicked="onOperationButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="x"
+                    TextColor="white" />
+            <Button Grid.Row="2"
+                    Grid.Column="3"
+                    BackgroundColor="#FF9329"
+                    Clicked="onOperationButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="-"
+                    TextColor="white" />
+            <Button Grid.Row="3"
+                    Grid.Column="3"
+                    BackgroundColor="#FF9329"
+                    Clicked="onOperationButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="+"
+                    TextColor="white" />
+            <Button Grid.Row="4"
+                    Grid.Column="3"
+                    BackgroundColor="#FF9329"
+                    Clicked="onEqualButtonClicked"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="="
+                    TextColor="white" />
+
+            <Button Grid.Row="3"
+                    Grid.Column="0"
+                    BackgroundColor="#2C2D2E"
+                    Clicked="onDigitButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="1"
+                    TextColor="white" />
+            <Button Grid.Row="3"
+                    Grid.Column="1"
+                    BackgroundColor="#2C2D2E"
+                    Clicked="onDigitButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="2"
+                    TextColor="white" />
+            <Button Grid.Row="3"
+                    Grid.Column="2"
+                    BackgroundColor="#2C2D2E"
+                    Clicked="onDigitButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="3"
+                    TextColor="white" />
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    BackgroundColor="#2C2D2E"
+                    Clicked="onDigitButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="4"
+                    TextColor="white" />
+            <Button Grid.Row="2"
+                    Grid.Column="1"
+                    BackgroundColor="#2C2D2E"
+                    Clicked="onDigitButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="5"
+                    TextColor="white" />
+            <Button Grid.Row="2"
+                    Grid.Column="2"
+                    BackgroundColor="#2C2D2E"
+                    Clicked="onDigitButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="6"
+                    TextColor="white" />
+            <Button Grid.Row="1"
+                    Grid.Column="0"
+                    BackgroundColor="#2C2D2E"
+                    Clicked="onDigitButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="7"
+                    TextColor="white" />
+            <Button Grid.Row="1"
+                    Grid.Column="1"
+                    BackgroundColor="#2C2D2E"
+                    Clicked="onDigitButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="8"
+                    TextColor="white" />
+            <Button Grid.Row="1"
+                    Grid.Column="2"
+                    BackgroundColor="#2C2D2E"
+                    Clicked="onDigitButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="9"
+                    TextColor="white" />
+            <Button Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="#2C2D2E"
+                    Clicked="onDigitButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="0"
+                    TextColor="white" />
+            <Button x:Name="DecimalBtn"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    BackgroundColor="#2C2D2E"
+                    Clicked="onDigitButtonClick"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text=","
+                    TextColor="white" />
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
